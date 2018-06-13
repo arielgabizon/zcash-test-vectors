@@ -25,6 +25,9 @@ class TxOut(object):
     def __init__(self, random=os.urandom):
         self.nValue=random(8)
         self.scriptPubKey=b'\x00\x51'*(ord(random(1)) % 3)
+    def to_string(self):
+        return self.nValue+self.scriptPubKey
+
 
 
 
